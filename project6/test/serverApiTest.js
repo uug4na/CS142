@@ -27,20 +27,15 @@ const userDetailProperties = [
   "description",
   "occupation",
 ];
-// Valid properties of the photo model
+
 const photoProperties = ["file_name", "date_time", "user_id", "_id", "comments"];
-// Valid comments properties
+
 const commentProperties = ["comment", "date_time", "_id", "user"];
 
 function assertEqualDates(d1, d2) {
   assert(new Date(d1).valueOf() === new Date(d2).valueOf());
 }
 
-/**
- * MongoDB automatically adds some properties to our models. We allow these to
- * appear by removing them when before checking for invalid properties.  This
- * way the models are permitted but not required to have these properties.
- */
 function removeMongoProperties(model) {
   return model;
 }
